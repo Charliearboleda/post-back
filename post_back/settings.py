@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-80dk_2c-&^%xq(=2777ypw-!o$*xqb7ldr^&y0_q5j3#-wlrox
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'post-ga-api.herokuapp.com', 'ec2-52-0-114-209.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', 'post-ga-api.herokuapp.com', 'post-ga.herokuapp.com']
 
 
 # Application definition
