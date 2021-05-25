@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', 'post-ga-api.herokuapp.com', 'ec2-52-0-114-209.com
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'rest_framework',
     'users_api',
     # 'posts_api',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,6 +60,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'post_back.urls'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
