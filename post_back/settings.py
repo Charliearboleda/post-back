@@ -33,6 +33,10 @@ ALLOWED_HOSTS = ['localhost', 'post-ga-api.herokuapp.com', 'ec2-52-0-114-209.com
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'users_api',
+    # 'posts_api',
+    # 'comments_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'post',
-        'USER': 'qzhombvntmppwf',
-        'PASSWORD': '69b174d78e83d51674cdca57ca93be3d829887c8c53bb6afc54c04f1fdee30b2',
-        'HOST': 'ec2-52-0-114-209.compute-1.amazonaws.com'
+        'USER': 'postgres',
+        'PASSWORD': ' ',
+        'HOST': 'localhost'
     }
 }
 
