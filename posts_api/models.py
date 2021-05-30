@@ -6,5 +6,5 @@ class Post(models.Model):
     author = models.IntegerField(blank=False)
     image = models.CharField(max_length=256, blank=True, null=True)
     text = models.CharField(max_length=256, blank=False)
-    liked_by = ArrayField(models.IntegerField(default=0))
-    comments = ArrayField(models.IntegerField(default=0))
+    liked_by = ArrayField(models.IntegerField(blank=True, default=0))
+    comments = ArrayField(models.IntegerField(blank=True, default=0))
