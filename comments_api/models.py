@@ -5,4 +5,4 @@ from django.db import models
 class Comment(models.Model):
     author = models.IntegerField()
     text = models.CharField(max_length=256)
-    post_id = models.IntegerField()
+    post = models.IntegerField()
