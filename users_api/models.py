@@ -19,6 +19,6 @@ class User(models.Model):
         null=True
     )
     following = models.ManyToManyField(
-        "self",
+        "User",
         blank=True
     )
