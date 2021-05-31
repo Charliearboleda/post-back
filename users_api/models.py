@@ -20,15 +20,15 @@ class User(models.Model):
     posts = ArrayField(
         models.IntegerField(),
         blank=True,
-        default=[0]
+        default=list
     )
     following = ArrayField(
         models.IntegerField(),
         blank=True,
-        default=[0]
+        default=list
     )
     followers = ArrayField(
         models.IntegerField(),
         blank=True,
-        default=[0]
+        default=list
     )

@@ -20,10 +20,10 @@ class Post(models.Model):
     liked_by = ArrayField(
         models.IntegerField(),
         blank=True,
-        default=[0]
+        default=list
     )
     comments = ArrayField(
         models.IntegerField(),
         blank=True,
-        default=[0]
+        default=list
     )
