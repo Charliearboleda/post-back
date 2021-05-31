@@ -3,8 +3,32 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    username = models.CharField(max_length=32)
-    password = models.CharField(max_length=32)
-    posts = ArrayField(models.IntegerField())
-    following = ArrayField(models.IntegerField())
-    followers = ArrayField(models.IntegerField())
+    email = models.CharField(
+        max_length=64,
+        blank=False
+    )
+    displayName = models.CharField(
+        max_length=64,
+        blank=False,
+        null=True
+    )
+    tagLine = models.CharField(
+        max_length=128,
+        blank=False,
+        null=True
+    )
+    posts = ArrayField(
+        models.IntegerField(),
+        blank=True,
+        default=[0]
+    )
+    following = ArrayField(
+        models.IntegerField(),
+        blank=True,
+        default=[0]
+    )
+    followers = ArrayField(
+        models.IntegerField(),
+        blank=True,
+        default=[0]
+    )
