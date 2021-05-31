@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     email = models.CharField(
+        unique=True,
         max_length=64,
         blank=False
     )
@@ -17,18 +18,7 @@ class User(models.Model):
         blank=False,
         null=True
     )
-    posts = ArrayField(
-        models.IntegerField(),
-        blank=True,
-        default=list
-    )
-    following = ArrayField(
-        models.IntegerField(),
-        blank=True,
-        default=list
-    )
-    followers = ArrayField(
-        models.IntegerField(),
-        blank=True,
-        default=list
+    following = models.ManyToManyField(
+        "self",
+        blank=True
     )

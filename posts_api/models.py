@@ -1,11 +1,14 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from users_api.models import User
 
 # Create your models here.
 class Post(models.Model):
-    author = models.IntegerField(
-        blank=False,
-        null=True
+    user = models.ForeignKey(
+        "users_api.User",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_query_name="posts"
     )
     image = models.CharField(
         max_length=256,
@@ -18,11 +21,6 @@ class Post(models.Model):
         null=True
     )
     liked_by = ArrayField(
-        models.IntegerField(),
-        blank=True,
-        default=list
-    )
-    comments = ArrayField(
         models.IntegerField(),
         blank=True,
         default=list
